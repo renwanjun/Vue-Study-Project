@@ -6,11 +6,14 @@
                   <a href=""></a>
               </div>
               <ul class="header-nav">
-                  <li class="item"><a href="">Our Story</a></li>
+                <li class="item" v-for="item in list">
+                  <a href="#">{{item}}</a>
+                </li>
+                  <!-- <li class="item"><a href="">Our Story</a></li>
                   <li class="item"><a href="">Menu</a></li>
                   <li class="item"><a href="">Peservations</a></li>
                   <li class="item"><a href="">News</a></li>
-                  <li class="item"><a href="">Rviews</a></li>
+                  <li class="item"><a href="">Rviews</a></li> -->
               </ul>
           </div>
       </header>
@@ -31,7 +34,15 @@
 </template>
 <script>
 export default {
-  name: 'Main'
+  name: 'Main',
+  data () {
+    return {
+      msg: 'dd',
+      list: [
+        'Apple', 'Banana'
+      ]
+    }
+  }
 }
 </script>
 
