@@ -4,6 +4,7 @@ Vue.use(Vuex)
 // 存放登录状态
 const store = new Vuex.Store({
   state: {
+    token: false,
     user: false
   },
   mutations: {
