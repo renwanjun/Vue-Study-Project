@@ -36,8 +36,8 @@ https://juejin.im/entry/55f77eb460b28e6a6f0f4f86
 http://www.jianshu.com/p/2105de106387
 https://www.zhihu.com/question/38213423
 
-# 依赖包说明
-##axios
+#依赖包说明
+## axios
 axios是一个基于Promise用于浏览器和nodejs的HTTP客户端，它本身具有以特征：
 * 从浏览器中创建 XMLHttpRequest
 * 从 node.js 发出 http 请求
@@ -58,8 +58,8 @@ http://www.codes51.com/itwd/4284489_1.html
 Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。Vuex 也集成到 Vue 的官方调试工具 devtools extension，提供了诸如零配置的 time-travel 调试、状态快照导入导出等高级调试功能。
 
 
-#爬行者
-##爬1
+# 爬行者
+## 爬1
 登录拦截
 
 路由拦截
