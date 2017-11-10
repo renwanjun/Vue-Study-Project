@@ -31,12 +31,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 * * *
 
-#SPA项目开发思路拓展
+# SPA项目开发思路拓展
 https://juejin.im/entry/55f77eb460b28e6a6f0f4f86
 http://www.jianshu.com/p/2105de106387
 https://www.zhihu.com/question/38213423
 
-#依赖包说明
+# 依赖包说明
 ## axios
 axios是一个基于Promise用于浏览器和nodejs的HTTP客户端，它本身具有以特征：
 * 从浏览器中创建 XMLHttpRequest
