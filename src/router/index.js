@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import store from '@/vuex/store'
+import store from '@/vuex/store'
 
 import Login from '@/components/login'
 import Main from '@/components/main'
 
 Vue.use(Router)
-const store = Vue.$store
+// const store = Vue.$store
 // 定义路由配置
 const routerConfig = {
   routes: [

@@ -36,7 +36,11 @@ https://juejin.im/entry/55f77eb460b28e6a6f0f4f86
 http://www.jianshu.com/p/2105de106387
 https://www.zhihu.com/question/38213423
 
-# 依赖包说明
+# 编译依赖模块
+## vue-cli less使用说明
+https://www.cnblogs.com/QQ-Monarch/p/7126309.html
+
+# 开发依赖包说明
 ## axios
 axios是一个基于Promise用于浏览器和nodejs的HTTP客户端，它本身具有以特征：
 * 从浏览器中创建 XMLHttpRequest
