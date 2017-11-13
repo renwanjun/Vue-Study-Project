@@ -24,19 +24,21 @@ export default {
   methods: {
     // 用户登录
     _login () {
-      if (!this.username || !this.password) {
-        alert('')
-        return
+      if (!this.login.username || !this.login.password) {
+        alert('用户名密码不能为空')
+        return false
       }
       // this.$store.dispatch();
 
-      this._http.Login(this.login)
-      . then(res => {
-        console.log(res)
-      })
-      . catch(err => {
-        console.log(err)
-      })
+      this._http.fetch('get', this.$urls.login, this.login)
+        . then(res => {
+          console.log(res)
+          return false
+        })
+        . catch(err => {
+          console.log(err)
+          return false
+        })
     }
   }
 }

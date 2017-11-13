@@ -32,13 +32,11 @@ router.beforeEach((to, from, next) => {
     next()
   } else {
     if (!store.state.user) {
+      // next({path: '/login'})
       next({path: '/login', query: {redirect: to.fullPath}})
     } else {
       next()
     }
-    // if (!store.state.user && (from.path === '/my') && (to.path === '/ToolCompute')) {
-    //   next({path: '/login'})
-    // }
   }
 })
 // 初始化路由实例并导出

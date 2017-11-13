@@ -3,7 +3,7 @@ import store from '@/vuex/store'
 import router from '@/router'
 import qs from 'qs'
 
-import URLS from './apiUrl'
+import URLS from './urls'  // 地址路径
 
 axios.defaults.timeout = 5000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www.form-urlencodex:charset=UTF-8'
@@ -31,6 +31,7 @@ axios.interceptors.response.use(
     // if (!response.data) { // 自定义业务处理
     //   return Promise.reject(response)
     // }
+    console.log(response)
     return response
   },
   error => {
@@ -46,26 +47,9 @@ axios.interceptors.response.use(
           })
       }
     }
-    return Promise.reject(error.response.data)
+    if (error.response) return Promise.reject(error.response.data)
   }
 )
-
-// 公共方法
-export function fetch (url, params) {
-  return new Promise((resolve, reject) => {
-    axios.post(url, params).then(response => {
-      resolve(response)
-    }, err => {
-      reject(err)
-    }).catch(err => {
-      reject(err)
-    })
-  })
-}
-
-// function fetch(type){
-
-// }
 
 function post (url, params) {
   return new Promise((resolve, reject) => {
@@ -79,7 +63,17 @@ function post (url, params) {
   })
 }
 function get (url, params) {
-  url += '?' + params
+  if (params !== undefined && params !== '') {
+    url += '?'
+    if (typeof params === 'object') {
+      for (let field in params) {
+        url += field + '=' + params[field] + '&'
+      }
+    } else {
+      url += params
+    }
+  }
+
   return new Promise((resolve, reject) => {
     axios.get(url).then(response => {
       resolve(response)
@@ -90,16 +84,19 @@ function get (url, params) {
     })
   })
 }
+
 export default{
-  /**
-   * 用户登录
-   */
-  Login (params) {
-    return fetch(URLS.login, params)
-  },
-  getAddressJson () {
-    return fetch('/address/', {addressId: 1})
+  fetch (method, url, params) {
+    return new Promise((resolve, reject) => {
+      if (method === 'post') { // POST传参序列化
+        return post(url, params)
+      }
+      if (method === 'get') { // POST传参序列化
+        // config.data = qs.stringify(config.data)
+        return get(url, params)
+      }
+    })
   }
 }
 
-export {post, get}
+export {URLS as urls, post, get}
