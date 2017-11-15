@@ -1,3 +1,3 @@
 export default{
-  login: 'api/ss'
+  login: 'admin/login'
 }

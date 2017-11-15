@@ -5,9 +5,11 @@ import qs from 'qs'
 
 import URLS from './urls'  // 地址路径
 
-axios.defaults.timeout = 5000
+axios.defaults.timeout = 50000
 axios.defaults.headers.post['Content-Type'] = 'application/x-www.form-urlencodex:charset=UTF-8'
-axios.defaults.baseURL = 'http://localhost:8008'
+// axios.defaults.headers.authorization = 'wewewewq'
+axios.defaults.headers.common['authorization'] = 'wewewewq'
+axios.defaults.baseURL = 'http://localhost:3006'  // 默认得请求路径
 
 // http request拦截器 发送请求前处理
 axios.interceptors.request.use(
@@ -38,7 +40,7 @@ axios.interceptors.response.use(
     if (error.response) {
       // 根据状态码区分处理问题
       switch (error.response.status) {
-        case 401: // 登录被拒绝
+        case 401: // 登录被拒绝。
         // 返回 401 清除token信息并跳转到登录页面
           // store.commit(types.LOGOUT)
           router.replace({
@@ -47,7 +49,8 @@ axios.interceptors.response.use(
           })
       }
     }
-    if (error.response) return Promise.reject(error.response.data)
+    return Promise.reject(error.message)
+    // if (error.response)
   }
 )
 
@@ -73,7 +76,6 @@ function get (url, params) {
       url += params
     }
   }
-
   return new Promise((resolve, reject) => {
     axios.get(url).then(response => {
       resolve(response)

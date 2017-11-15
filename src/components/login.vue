@@ -15,9 +15,9 @@ export default {
   data () {
     return {
       login: {
-        username: '',
-        password: '',
-        code: ''
+        username: 'admin',
+        password: 'admin',
+        code: 'cdjh'
       }
     }
   },
@@ -30,7 +30,7 @@ export default {
       }
       // this.$store.dispatch();
 
-      this._http.fetch('get', this.$urls.login, this.login)
+      this._http.fetch('post', this.$urls.login, this.login)
         . then(res => {
           console.log(res)
           return false
