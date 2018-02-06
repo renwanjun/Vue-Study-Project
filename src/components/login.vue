@@ -52,6 +52,7 @@ export default {
    overflow: hidden;
    position: relative;
    background-color:@main-background;
+   
  }
 </style>
 
