@@ -17,6 +17,9 @@
               </ul>
           </div>
       </header>
+
+    <starry-sky></starry-sky>
+
       <div class="public-content index-banner"></div>
       <div class="public-content index-list"></div>
       <div class="public-content index-panel">
@@ -32,15 +35,19 @@
       </footer>
   </div>
 </template>
+<style type="text/css">
+
+</style>
 <script>
+import StarrySky from './animation/starry_sky'
+
 export default {
+  components: {StarrySky},
   name: 'Main',
   data () {
     return {
       msg: 'dd',
-      list: [
-        'Apple', 'Banana'
-      ]
+      list: ['Apple', 'Banana']
     }
   }
 }

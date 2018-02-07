@@ -3,7 +3,8 @@ import Router from 'vue-router'
 import store from '@/vuex/store'
 
 import Login from '@/components/login'
-import Main from '@/components/main'
+import main from '@/components/main'
+import starrySky from '@/components/animation/starry_sky'
 
 Vue.use(Router)
 // const store = Vue.$store
@@ -17,8 +18,13 @@ const routerConfig = {
     },
     {
       path: '/',
-      name: 'Main',
-      component: Main
+      name: 'main',
+      component: main
+    },
+    {
+      path: '/',
+      name: 'starry_sky',
+      component: starrySky
     }
   ]
 }
@@ -33,7 +39,8 @@ router.beforeEach((to, from, next) => {
   } else {
     if (!store.state.user) {
       // next({path: '/login'})
-      next({path: '/login', query: {redirect: to.fullPath}})
+      next()
+      // next({path: '/login', query: {redirect: to.fullPath}})
     } else {
       next()
     }

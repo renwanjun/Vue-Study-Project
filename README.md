@@ -77,3 +77,12 @@ https://www.cnblogs.com/guoxianglei/p/7084506.html
 https://www.zhihu.com/question/38145997
 https://github.com/hzzly/xyy-vue/blob/master/src/main.js
 https://github.com/MillerRen/vue-boilerplate/tree/master/src
+
+
+
+# 编辑工具小知识
+##webstorm配置安装markdown插件
+参考地址：http://blog.csdn.net/dongshaoshuai/article/details/42006927
+##webstorm配置eslint规则
+https://www.imooc.com/qadetail/206106
+https://www.zhihu.com/question/52678389
