@@ -14,12 +14,12 @@ ol,ul,li{
 
 a{
     text-decoration: none;
-    display: block;
 }
 
 img{
     border: none;
-    display: block;
+    /*消除图片底部3像素距离*/
+    vertical-align: top;
 }
 
 .clearfloat{
