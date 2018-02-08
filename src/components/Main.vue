@@ -18,7 +18,8 @@
           </div>
       </header>
 
-    <starry-sky></starry-sky>
+    <!--<starry-sky></starry-sky>-->
+    <picture-carousel></picture-carousel>
 
       <div class="public-content index-banner"></div>
       <div class="public-content index-list"></div>
@@ -40,9 +41,13 @@
 </style>
 <script>
 import StarrySky from './animation/starry_sky'
+import PictureCarousel from './animation/picture_carouse'
 
 export default {
-  components: {StarrySky},
+  components: {
+    StarrySky,
+    PictureCarousel
+  },
   name: 'Main',
   data () {
     return {

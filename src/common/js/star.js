@@ -25,21 +25,25 @@ const getMinRandom = () => {
 }
 
 function Star (width, height) {
-  this.canvas = {
-    width: width,
-    height: height
-  }
+  // this.canvas = {
+  //   width: width,
+  //   height: height
+  // }
+  //
+  this.width = 1920
+  this.height = 1000
   // 圆的轨迹方程式为：(x-a)²+(y-b)²=r²
   // 因此，已知x, 则y = Math.sqrt(r² - (x-a)²) + b;
   // 其中，圆心是(a, b)
   // 在本例子中
   // 圆心坐标是(this.canvas.width/2, this.canvas.height - 600 + r);
-  let a = this.canvas.width / 2, b = this.canvas.height - settings.height + settings.r
+  let a = this.width / 2,
+    b = this.height - settings.height + settings.r
   // 因此，已知横坐标随机
-  this.x = Math.floor(Math.random() * this.canvas.width)
+  this.x = Math.floor(Math.random() * this.width)
   // 纵坐标需要在圆弧以上
   // 越往上，越稀疏
-  this.offsety = getMinRandom() * (this.canvas.height - settings.height)
+  this.offsety = getMinRandom() * (this.height - settings.height)
   this.y = b - Math.sqrt(settings.r * settings.r - (this.x - a) * (this.x - a)) - this.offsety
 
   this.vx = Math.random() * 0.05 + 0.025 // 水平偏移，也是移动速度
@@ -49,7 +53,7 @@ function Star (width, height) {
   particleIndex++
   stars[particleIndex] = this
   this.alpha = 0.0
-  this.maxAlpha = 0.2 + (this.y / this.canvas.height) * Math.random() * 0.8
+  this.maxAlpha = 0.2 + (this.y / this.height) * Math.random() * 0.8
   this.alphaAction = 1
 }
 
@@ -60,7 +64,7 @@ Star.prototype.draw = () => {
   this.x += this.vx
   // 根据切线方向进行偏移
   // y坐标
-  this.y = this.canvas.height - settings.height + settings.r - Math.sqrt(settings.r * settings.r - (this.x - this.canvas.width / 2) * (this.x - this.canvas.width / 2)) - this.offsety
+  this.y = this.height - settings.height + settings.r - Math.sqrt(settings.r * settings.r - (this.x - this.width / 2) * (this.x - this.width / 2)) - this.offsety
   console.log(this.y)
   // 透明度慢慢起来
   if (this.alphaAction === 1) {
@@ -83,11 +87,11 @@ Star.prototype.draw = () => {
   }
 
   // 绘制星星
-  context.beginPath()
-  context.fillStyle = 'rgba(255,255,255,' + this.alpha.toString() + ')'
-  context.arc(this.x, this.y, this.particleSize, 0, Math.PI * 2, true)
-  context.closePath()
-  context.fill()
+  // context.beginPath()
+  // context.fillStyle = 'rgba(255,255,255,' + this.alpha.toString() + ')'
+  // context.arc(this.x, this.y, this.particleSize, 0, Math.PI * 2, true)
+  // context.closePath()
+  // context.fill()
 }
 
 module.exports = Star
