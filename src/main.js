@@ -13,7 +13,6 @@ import './common/styles/reset.css'
 import './common/styles/common.less'
 import './common/styles/virables.less'
 
-import StarrySky from './components/animation/starry_sky'
 
 // 引入全局使用组件
 // import 'swiper/dist/css/swiper.min.css'
@@ -33,5 +32,5 @@ new Vue({
   router,
   store,
   template: '<App/>',
-  components: {App, StarrySky}
+  components: {App}
 })
