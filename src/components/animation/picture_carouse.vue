@@ -140,6 +140,31 @@
       }
     },
     methods: {
+      _roll: function (direction) {
+        var imgs_div = document.getElementById('imgs')
+        var nav_div = document.getElementById('nav')
+        // 获取到图片轮播的ul对象数组
+        var imgsUl = imgs_div.getElementsByTagName('ul')[0]
+
+        // 判断当前轮播位置
+        let offset = parseInt(imgsUl.offsetLeft)
+        if (direction < 0) {
+          if (offset < 0) {
+            offset += 1000
+          } else {
+            offset = -1000 * (this.imgs.length - 1)
+          }
+          this.currentIndex = --this.currentIndex < 0 ? this.imgs.length - 1 : this.currentIndex
+        } else {
+          if (offset > -1000 * (this.imgs.length + 1)) {
+            offset -= 1000
+          } else {
+            offset = -1000 * 2
+          }
+          this.currentIndex = ++this.currentIndex >= this.imgs.length ? 0 : this.currentIndex
+        }
+        imgsUl.style.left = offset + 'px'
+      },
       prev: function () {
         var imgs_div = document.getElementById('imgs')
         var nav_div = document.getElementById('nav')
@@ -153,8 +178,6 @@
         } else {
           offset = -1000 * (this.imgs.length - 1)
         }
-
-        // var offset = parseInt(imgsUl.offsetLeft) + 1000
         imgsUl.style.left = offset + 'px'
         // --this.currentIndex
         this.currentIndex = --this.currentIndex < 0 ? this.imgs.length - 1 : this.currentIndex
@@ -172,14 +195,22 @@
           offset = -1000 * 2
         }
 
-        // var offset = parseInt(imgsUl.offsetLeft) - 1000
-
         imgsUl.style.left = offset + 'px'
+        // imgsUl.scrollTo(-offset,0)
         // ++this.currentIndex
         this.currentIndex = ++this.currentIndex >= this.imgs.length ? 0 : this.currentIndex
       }
     },
     mounted () {
+      // var imgs_div = document.getElementById('preous')
+      // console.log(imgs_div.getBoundingClientRect(), imgs_div.offsetTop)
+      // console.log(window.innerHeight, window,document.documentElement.clientHeight, document.documentElement.scrollTop,document.documentElement.scrollHeight)
+      // console.log(document.body.scrollHeight,document.body.scrollWidth,document.body.clientWidth,document.body.offsetWidth,window.screen.availWidth)
+      // console.log(imgs_div.offsetHeight,imgs_div.offsetWidth)
+      // console.log(imgs_div.offsetLeft,imgs_div.offsetTop)
+      // console.log(imgs_div.clientLeft,imgs_div.clientTop)
+      // console.log(imgs_div.clientWidth,imgs_div.clientHeight,imgs_div.offsetParent)
+
       // if (!window.requestAnimationFrame) {
       //   window.requestAnimationFrame = function (fn) {
       //     // setTimeout(fn, 17)
@@ -189,6 +220,9 @@
       // requestAnimationFrame(function () {
       //   document.getElementById('next').click()
       // })
+
+      // 自动播放
+
     }
   }
 </script>

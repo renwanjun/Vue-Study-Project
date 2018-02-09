@@ -18,7 +18,7 @@
           </div>
       </header>
 
-    <!--<starry-sky></starry-sky>-->
+    <starry-sky></starry-sky>
     <picture-carousel></picture-carousel>
 
       <div class="public-content index-banner"></div>
