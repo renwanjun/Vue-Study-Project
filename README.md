@@ -63,8 +63,7 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用�
 
 
 # 爬行者
-## 爬1
-登录拦截
+## 爬1 登录拦截
 
 路由拦截
 参考资料：
@@ -77,3 +76,14 @@ https://www.cnblogs.com/guoxianglei/p/7084506.html
 https://www.zhihu.com/question/38145997
 https://github.com/hzzly/xyy-vue/blob/master/src/main.js
 https://github.com/MillerRen/vue-boilerplate/tree/master/src
+
+##爬2 开发插件
+参考官方建议：
+https://cn.vuejs.org/v2/guide/plugins.html#ad
+https://www.cnblogs.com/itbainianmei/p/7826742.html
+# 编辑工具小知识
+##webstorm配置安装markdown插件
+参考地址：http://blog.csdn.net/dongshaoshuai/article/details/42006927
+##webstorm配置eslint规则
+https://www.imooc.com/qadetail/206106
+https://www.zhihu.com/question/52678389

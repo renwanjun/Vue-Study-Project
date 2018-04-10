@@ -1,6 +1,6 @@
 root = true
 
-[*]
+[*] 代码规范
 charset = utf-8
 indent_style = space
 indent_size = 2

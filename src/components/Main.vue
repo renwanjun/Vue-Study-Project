@@ -17,6 +17,14 @@
               </ul>
           </div>
       </header>
+
+
+    <!--<starry-sky></starry-sky>-->
+    <!--<picture-carousel></picture-carousel>-->
+    <!--<test></test>-->
+      <!--<svgs>< /svgs>-->
+    <three-d></three-d>
+
       <div class="public-content index-banner"></div>
       <div class="public-content index-list"></div>
       <div class="public-content index-panel">
@@ -32,15 +40,29 @@
       </footer>
   </div>
 </template>
+<style lang="less" scoped>
+
+
+</style>
 <script>
+import StarrySky from './animation/starry_sky'
+import PictureCarousel from './animation/picture_carouse'
+import Test from './test'
+import Svgs from './svg'
+import ThreeD from './threeD'
 export default {
+  components: {
+    StarrySky,
+    PictureCarousel,
+    Test,
+    Svgs,
+    ThreeD
+  },
   name: 'Main',
   data () {
     return {
       msg: 'dd',
-      list: [
-        'Apple', 'Banana'
-      ]
+      list: ['Apple', 'Banana']
     }
   }
 }
