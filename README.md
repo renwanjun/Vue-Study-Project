@@ -1,6 +1,6 @@
 # vue2017
 
-> a first vue-cli project
+> my first vue-cli project
 
 ## Build Setup
 
